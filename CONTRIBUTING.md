@@ -1,6 +1,6 @@
 # Contribuir a los repositorios de Urekz
 
-Cómo trabajamos está en el handbook público: https://urekz.com. Esta página resume lo que aplica a cualquier repositorio de `urekz-dev`.
+Cómo trabajamos está en el handbook público: https://handbook.urekz.com. Esta página resume lo que aplica a cualquier repositorio de `urekz-dev`.
 
 ## Origen del trabajo
 El trabajo se planifica en **Plane**. GitHub Issues está desactivado. Todo PR enlaza un work item (`EMR-12`, `UCODE-4`, `UREKZ-7`) o declara `N/A - maintenance exception`.
