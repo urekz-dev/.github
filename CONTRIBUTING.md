@@ -1,37 +1,26 @@
-# Contributing to Urekz repositories
+# Contribuir a los repositorios de Urekz
 
-## Source of work
+Cómo trabajamos está en el handbook público: https://urekz.com. Esta página resume lo que aplica a cualquier repositorio de `urekz-dev`.
 
-Planned work lives in Plane. GitHub Issues are not the work-management system for Urekz repositories.
+## Origen del trabajo
+El trabajo se planifica en **Plane**. GitHub Issues está desactivado. Todo PR enlaza un work item (`EMR-12`, `UCODE-4`, `UREKZ-7`) o declara `N/A - maintenance exception`.
 
-## Branches
-
-Use short-lived branches from `main`:
-
-`<type>/<PLANE-ID>-<short-description>`
-
-Examples:
-
-- `feat/UCODE-42-semantic-memory`
-- `fix/EMR-27-mobile-layout`
-- `docs/UCODE-61-agent-model`
-
-Exceptional maintenance with no Plane item may use:
-
-`chore/maintenance-<short-description>`
-
-and the Pull Request must explicitly state `N/A - maintenance exception`.
+## Ramas
+Cortas, desde `main`: `<type>/<PLANE-ID>-<descripcion-corta>` (`feat/EMR-12-busqueda-por-categoria`, `docs/UREKZ-3-onboarding`, `rfd/0017-titulo` en el handbook). Una rama por story; mergeada antes del cierre del ciclo de seis semanas.
 
 ## Commits
+Conventional Commits (`feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `rfd`). Firmados con SSH (ver onboarding en el handbook).
 
-Use Conventional Commits. Human commits should be signed using the contributor's configured signing method.
+## Pull requests
+Plantilla de la organización. Revisión de una persona distinta del autor. CI verde. Conversaciones resueltas. **Squash merge** únicamente: el título del PR es el commit en `main`.
 
-## Pull Requests
+En repos públicos lo impone un ruleset. En repos privados (plan Free) lo vigila el workflow `main-guard`: si alguien hace push directo a `main`, el workflow falla y avisa; corrige con un PR.
 
-Normal changes reach `main` through a Pull Request. Every PR requires human review by a person other than its author before merge.
+## Decisiones
+Técnicas de un producto: ADR en `docs/adr/` del repo. Organizativas o transversales: RFD en el handbook.
 
-CI must be green before merge. Resolve review conversations before merge.
+## Agentes
+Un agente puede abrir un PR si el work item lleva `flow:agent-ready`. El PR incluye un recibo: qué leyó, qué cambió, qué verificó. Lo aprueba una persona.
 
-## Merge strategy
-
-Use Squash Merge only. The Pull Request title becomes the final commit title on `main`, so PR titles must use Conventional Commit syntax.
+## Seguridad
+Sin secretos en el repo: `infisical scan install --pre-commit-hook` en cada clon. Vulnerabilidades: security@urekz.com (ver SECURITY.md).
